@@ -1,0 +1,2 @@
+# typeidea
+personal blog
