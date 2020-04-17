@@ -1,2 +1,2 @@
 # typeidea
-personal blog
+personal blog rmk
