@@ -4,6 +4,11 @@ from django.db import models
 
 # 分类model
 class Category(models.Model):
+    # 配置__str__,解决文章界面显示Category object的问题
+    def __str__(self):
+        return self.name
+
+
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_ITEMS = (
@@ -23,6 +28,10 @@ class Category(models.Model):
 
 # 标签model
 class Tag(models.Model):
+    # 配置__str__,解决文章界面显示Tag object的问题
+    def __str__(self):
+        return self.name
+
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_ITEMS = (
@@ -38,7 +47,7 @@ class Tag(models.Model):
     create_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
     class Meta:
-        verbose_name = verbose_name_plural = '分类'
+        verbose_name = verbose_name_plural = '标签'
 
 
 # 文章model
@@ -63,4 +72,4 @@ class Post(models.Model):
 
     class Meta:
         verbose_name = verbose_name_plural = '文章'
-        ordering = ['id']
+        ordering = ['-id'] #跟据id进行降序排列
