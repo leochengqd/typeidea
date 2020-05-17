@@ -3,6 +3,9 @@ from django.db import models
 
 # 友链model
 class Link(models.Model):
+    # 配置__str__,解决文章界面显示Tag object的问题
+    def __str__(self):
+        return self.name
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_ITEMS = (
@@ -27,6 +30,10 @@ class Link(models.Model):
 
 # 测边框model
 class SideBar(models.Model):
+    # 配置__str__,解决文章界面显示Tag object的问题
+    # def __str__(self):
+    #     return self.name
+
     STATUS_SHOW = 1
     STATUS_HIDE = 0
     STATUS_ITEMS = (

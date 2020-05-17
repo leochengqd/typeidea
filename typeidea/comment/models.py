@@ -4,6 +4,10 @@ from blog.models import Post
 
 # 评论model
 class Comment(models.Model):
+    # 配置__str__,解决文章界面显示Tag object的问题
+    # def __str__(self):
+    #     return self.name
+
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_ITEMS = (

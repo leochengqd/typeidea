@@ -52,6 +52,9 @@ class Tag(models.Model):
 
 # 文章model
 class Post(models.Model):
+    # 配置__str__,解决文章界面显示Tag object的问题
+    def __str__(self):
+        return self.title
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_DRAFT = 2
